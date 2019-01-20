@@ -1,0 +1,15 @@
+# Datadog
+---
+galaxy_info:
+  author: Maxim Eeckhout
+  description: Install Datadog
+  platforms:
+    - name: EL
+      versions:
+        - 7
+    - name: Fedora
+      versions:
+        - 28
+  galaxy_tags:
+    - jenkins
+dependencies: []

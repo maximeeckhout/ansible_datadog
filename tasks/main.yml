@@ -1,0 +1,7 @@
+# Datadog
+---
+
+- include_vars: '../defaults/main.yml'
+- include_tasks: install_datadog.yml
+
+

@@ -1,0 +1,30 @@
+# Datadog
+---
+
+- name: Set Repo File
+  template:
+    src: datadog_repo.j2
+    dest: /etc/yum.repos.d/datadog.repo
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Update your local yum repo and install the Agent
+  shell: >
+    yum makecache
+
+- name: Update your local yum repo and install the Agent
+  yum: 
+    name: datadog-agent-base
+    state: removed
+
+- name: Update your local yum repo and install the Agent
+  yum: 
+    name: datadog-agent
+    state: present
+
+- name: API Key
+  shell: >
+    sh -c "sed 's/api_key:.*/api_key: {{ api_key }}/' /etc/datadog-agent/datadog.yaml.example > /etc/datadog-agent/datadog.yaml"
+  notify: restart datadog-agent
+
