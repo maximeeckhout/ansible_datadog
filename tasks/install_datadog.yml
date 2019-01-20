@@ -4,7 +4,7 @@
 - name: Set Repo File
   template:
     src: datadog_repo.j2
-    dest: {{ repo_dest }}
+    dest: "{{ repo_dest }}"
     owner: root
     group: root
     mode: 0644
